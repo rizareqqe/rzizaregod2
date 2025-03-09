@@ -1,20 +1,20 @@
 <?php
-function isPerfectNumber(int $N): bool
+function isPerfectNumber(int $number): bool
 {
  $sum = 0;
 
- for ($i = 1; $i < $N; $i++) {
-  if ($N % $i === 0) {
+ for ($i = 1; $i < $number; $i++) {
+  if ($number % $i === 0) {
    $sum += $i;
   }
  }
 
- return $sum === $N;
+ return $sum === $number;
 }
 
-$N = 496;
+$number = 496;
 
-if (isPerfectNumber(N: $N)) {
+if (isPerfectNumber(number: $number)) {
  echo "Идеальное число";
 } else {
  echo "Не идеальное число";
