@@ -14,7 +14,7 @@ function isPerfectNumber(int $N): bool
 
 $N = 496;
 
-if (isPerfectNumber($N)) {
+if (isPerfectNumber(N: $N)) {
  echo "Идеальное число";
 } else {
  echo "Не идеальное число";

@@ -1,23 +1,23 @@
 <?php
 function mostRecent(string $text): string
 {
- $words = array_filter(explode(' ', $text));
+ $words = array_filter(array: explode(separator: ' ', string: $text));
 
  if (empty($words)) {
   return '';
  }
 
- $wordCounts = array_count_values($words);
+ $wordCounts = array_count_values(array: $words);
 
- arsort($wordCounts);
+ arsort(array: $wordCounts);
 
- $mostCommonWordCount = reset($wordCounts);
+ $mostCommonWordCount = reset(array: $wordCounts);
 
- $mostCommonWords = array_keys(array_filter($wordCounts, function ($count) use ($mostCommonWordCount) {
+ $mostCommonWords = array_keys(array_filter(array: $wordCounts, callback: function ($count) use ($mostCommonWordCount): bool {
   return $count === $mostCommonWordCount;
  }));
 
- return implode(' ', $mostCommonWords);
+ return implode(separator: ' ', array: $mostCommonWords);
 }
 
-echo mostRecent('aaaaaa ggggh j jjj  gggggggg 12233344 1224523 hhhhh hhhhh hhhhh hhhhh'); // hhhhh
+echo mostRecent(text: 'aaaaaa ggggh j jjj  gggggggg 12233344 1224523 hhhhh hhhhh hhhhh hhhhh'); // hhhhh
